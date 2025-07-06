@@ -1,0 +1,12 @@
+{% extends 'food/base.html' %}
+
+{% block body %}
+<div class="container d-flex flex-column justify-content-center align-items-center" style="min-height: 70vh;">
+  <div class="text-center">
+    <div class="card shadow p-4 rounded-4">
+      <h3 class="text-success mb-3">You have been logged out.</h3>
+      <a href="{% url 'login' %}" class="btn btn-outline-primary">Log in again</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

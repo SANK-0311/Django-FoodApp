@@ -1,0 +1,32 @@
+{% extends 'food/base.html' %}
+
+{% block body %}
+<div class="container mt-5">
+  <div class="row justify-content-center align-items-center g-4">
+    <div class="col-md-6">
+      <div class="card shadow rounded-4">
+        <img
+          src="{{ item.item_image }}"
+          class="card-img-top rounded-top-4"
+          alt="{{ item.item_name }}"
+          style="height: 300px; object-fit: cover"
+        />
+        <div class="card-body">
+          <h2 class="card-title">{{ object.item_name }}</h2>
+          <p class="card-text fs-5 text-muted">{{ object.item_desc }}</p>
+          <p class="fs-4"><strong>Price:</strong> ${{ object.item_price }}</p>
+
+          <div class="d-flex justify-content-between mt-4">
+            <a href="{% url 'food:delete_item' item.id %}" class="btn btn-outline-danger">
+              Delete
+            </a>
+            <a href="{% url 'food:index' %}" class="btn btn-secondary">
+              Back to Items
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
